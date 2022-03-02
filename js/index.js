@@ -64,6 +64,8 @@ const displayData = async (realData, isShowShort) => {
               </div>`
 
           card.appendChild(div)
+          toggleSpinner('none')
+          togglePhoneResult('flex')
         }
       }
     } else {
@@ -80,15 +82,31 @@ const displayData = async (realData, isShowShort) => {
                 <a onclick="expanDetails('${phone.slug}')" class="btn btn-success w-50 ms-3 mb-4" href="#phone-details">Details</a>
             </div>`
         card.appendChild(div)
+        toggleSpinner('none')
+        togglePhoneResult('flex')
         // console.log(card)
       })
     }
   }
 }
 
-// Search Data By user searching Key Word
+// toggle spinner
+const toggleSpinner = (text) => {
+  const spinner = document.getElementById('spinner')
+  spinner.style.display = text
+  spinner.classList.remove('d-none')
+}
+// toggle phone result
+const togglePhoneResult = (text) => {
+  const phoneResult = document.getElementById('search-result')
+  phoneResult.style.display = text
+  //   spinner.classList.remove('d-none')
+}
 
+// Search Data By user searching Key Word
 const searchData = async () => {
+  toggleSpinner('block')
+  togglePhoneResult('none')
   const searchInput = document.getElementById('search-input')
   let searchValue = searchInput.value
   let storedSearchValue = searchValue
