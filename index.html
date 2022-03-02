@@ -88,6 +88,7 @@
       <!-- Result section -->
       <section>
         <div class="container">
+          <div id="error-msg"></div>
           <div
             id="search-result"
             class="row row-cols-1 row-cols-md-3 g-4"
@@ -111,6 +112,16 @@
                 class="btn btn-primary disabled placeholder col-6"
               ></a>
             </div>
+          </div>
+
+          <div class="text-center">
+            <a
+              id="show-more"
+              onclick="showAllData()"
+              class="btn btn-info my-4 d-none"
+              href=""
+              >Show More</a
+            >
           </div>
         </div>
       </section>
