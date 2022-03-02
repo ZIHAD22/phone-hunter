@@ -1,3 +1,4 @@
+// fetch data by default;
 const fetchData = async () => {
   const phoneBrand = ['oppo', 'iphone', 'samsung']
   const selectBrand = Math.floor(Math.random() * phoneBrand.length)
@@ -13,6 +14,7 @@ const fetchData = async () => {
 
 fetchData()
 
+// display Data By Default
 const displayData = (realData) => {
   const card = document.getElementById('search-result')
   const phoneData = realData.data.map((phone) => {
@@ -29,6 +31,23 @@ const displayData = (realData) => {
         </div>`
 
     card.appendChild(div)
-    console.log(card)
+    // console.log(card)
   })
+}
+
+// Search Data By user searching Key Word
+
+const searchData = async () => {
+  const searchInput = document.getElementById('search-input')
+  let searchValue = searchInput.value
+  const url = `https://openapi.programming-hero.com/api/phones?search=${searchValue}`
+  const data = await fetch(url)
+  const individualData = await data.json()
+  console.log(individualData)
+  const preSearchData = document.getElementById('search-result')
+  while (preSearchData.hasChildNodes()) {
+    preSearchData.removeChild(preSearchData.firstChild)
+  }
+  displayData(individualData)
+  searchInput.value = ''
 }
