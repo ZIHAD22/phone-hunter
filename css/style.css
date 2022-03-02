@@ -12,3 +12,20 @@
     top: 15px;
     cursor: pointer;
 }
+
+
+/* mobile responsibel */
+@media only screen and (max-width: 480px)  {
+    .xicon {
+        width: 24px;
+        position: absolute;
+        right: 30px;
+        top: 15px;
+        cursor: pointer;
+        background-color: white;
+    }
+    .input {
+        width: 100% !important;
+        margin-bottom: 50px;
+    }
+}
