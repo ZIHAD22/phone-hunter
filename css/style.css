@@ -4,3 +4,11 @@
     margin: -124px;
     padding-right: 235px;
 }
+
+.xicon{
+    width: 24px;
+    position: absolute;
+    right: 110px;
+    top: 15px;
+    cursor: pointer;
+}
