@@ -26,6 +26,7 @@ fetchData()
 const displayData = async (realData, isShowShort) => {
   if (!realData.status) {
     const error = document.getElementById('error-msg')
+    error.classList.remove('d-none')
     while (error.hasChildNodes()) {
       error.removeChild(error.firstChild)
     }
@@ -35,10 +36,11 @@ const displayData = async (realData, isShowShort) => {
     <h1 class="text-center my-5">No Result Found</h1>
     
     `
-
     error.appendChild(div)
+    toggleSpinner('none')
   } else {
     const error = document.getElementById('error-msg')
+    error.classList.add('d-none')
     while (error.hasChildNodes()) {
       error.removeChild(error.firstChild)
     }
