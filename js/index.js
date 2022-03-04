@@ -16,7 +16,7 @@ const fetchData = async () => {
 
   //   fetching data
   const realData = await fetching(phoneBrand[selectBrand], false)
-  displayData(realData)
+  await displayData(realData)
   console.log(realData)
 }
 
